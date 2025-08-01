@@ -14,11 +14,16 @@ squares.forEach((square) => {
     square.addEventListener("mouseout", func1, false);
 })
 function func() {
-    this.setAttribute("style", "background-color: blue;")
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    this.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 }
 
 function func1() {
-    this.setAttribute("style", "background-color: white;")
+    if(Number(this.style.opacity) < 1) {
+        this.style.opacity = `${Number(this.style.opacity) + 0.1}`;
+    }
 }
 
 const button = document.createElement("button");
